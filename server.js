@@ -70,6 +70,6 @@ if(pageSize ==2 && page ==1){
     res.send("No hay mas jugadores")
   }
 });
-app.listen(3000, function(){
+app.listen(process.env.PORT||3000, function(){
 
 });
