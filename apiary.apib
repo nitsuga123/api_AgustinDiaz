@@ -1,0 +1,272 @@
+# MultiplayerServerGame
+
+All the data contained on a multiplayer game
+
+## /users/{id}
+
+### Retrieves a player's data with the score and position on leaderboard[GET]
+
++ Response 200 (application/json)
+
+        {
+            "name": "agustin",
+            "score": 500,
+            "position": 1
+        }
+        
+### Stores player's new score after duel [POST]
+
++ Request (application/json)
+
+        {
+            "score": 1000
+        }
++ Response 200
+
+## /UsersTeam/{id}
+
+### Retrieves a player's team [GET]
+
++ Response 200 (application/json)
+
+        {
+            "team":  {
+                     "Grougal","Samantha","Lich"
+                    }
+        }
+        
+### Stores player's new team [POST]
+
++ Request (application/json)
+
+        {
+           "team":   {
+                     "lich","Nefarian","Uroboros"
+                    }
+        }
++ Response 200
+
+## /CharacterPoints/{id}
+
+### Retrieves a player's character points [GET]
+
++ Response 200 (application/json)
+
+        {
+            "CPoints" : 350
+        }
+### Uses Characters Points to Upgrade Character [POST]
+
++ Request (application/json)
+     
+        "Characters": 
+                      {
+                        "name":"Grougal",                   
+                        "Hp":650,
+                        "Atk":500,
+                        "Def":400,
+                        "Special Atk":100,
+                        "Special Def":400,
+                      }
+                          
+                        
++ Response 200
+
+## /Spirit/{id}
+### Retrieves a player's Spirit points [GET]
+
++ Response 200 (application/json)
+
+        {
+            "Spirit" : 350
+        }
+        
+### Uses Spirit Points to buy a new character also updates Spirit Points [POST]
+
++ Request (application/json)
+        
+            "Spirit": 100,
+            "Characters": 
+                          {
+                                "name":"Grougal",
+                                "Hp":650,
+                                "Atk":500,
+                                "Def":400,
+                                "Special Atk":100,
+                                "Special Def":400,
+                          }
+                          
+        
++ Response 200        
+## /info/{id}
+
+### gets all the info of a player [Get]
+
+
++ Response 200 (application/json)
+
+        [
+            {
+                "position": 1,
+                "id": "01",
+                "name": "agustin",
+                "score": 500,
+                "CPoints" : 350,
+                "Spirit": 800,
+                "team":  {
+                          "Grougal","Samantha","Lich"
+                        },
+                "Characters": [
+                                {
+                                "name":"Grougal",
+                                "Hp":600,
+                                "Atk":400,
+                                "Def":400,
+                                "Special Atk":100,
+                                "Special Def":400,
+                                "Element": "fire"
+                                
+                                },
+                                {
+                                "name":"Samantha",
+                                "Hp":750,
+                                "Atk":100,
+                                "Def":120,
+                                "Special Atk":600,
+                                "Special Def":300,
+                                "Element": "wind"
+                                
+                                },
+                                {
+                                "name":"lich",
+                                "Hp":400,
+                                "Atk":700,
+                                "Def":550,
+                                "Special Atk":0,
+                                "Special Def":200,
+                                "Element": "darkness"
+                                
+                                },
+                                {
+                                "name":"Nausica",
+                                "Hp":700,
+                                "Atk":100,
+                                "Def":700,
+                                "Special Atk":300,
+                                "Special Def":300,
+                                "Element": "water"
+                                
+                                }
+                
+                              ]             
+            },
+            {
+                "position": 2,
+                "id": "02",
+                "name": "samuel",
+                "score": 500,
+                "CPoints" : 350,
+                "Spirit": 600,
+                "team":  {
+                          "Samantha","Nefarian","Uroboros"
+                        },
+                "Characters": [
+                                {
+                                "name":"Samantha",
+                                "Hp":550,
+                                "Atk":220,
+                                "Def":120,
+                                "Special Atk":200,
+                                "Special Def":600,
+                                "Element": "wind"
+                                
+                                },
+                                {
+                                "name":"Nefarian",
+                                "Hp":650,
+                                "Atk":200,
+                                "Def":500,
+                                "Special Atk":50,
+                                "Special Def":500,
+                                "Element": "water"
+                                
+                                },
+                                {
+                                "name":"Uroboros",
+                                "Hp":400,
+                                "Atk":700,
+                                "Def":200,
+                                "Special Atk":300,
+                                "Special Def":100,
+                                "Element": "darkness"
+                                
+                                },
+                                {
+                                "name":"lorelei",
+                                "Hp":700,
+                                "Atk":300,
+                                "Def":300,
+                                "Special Atk":300,
+                                "Special Def":300,
+                                "Element": "wind"
+                                
+                                }
+                
+                              ]     
+                
+            },
+            {
+                "position": 3,
+                "id": "03",
+                "name": "hector",
+                "score": 500,
+                "CPoints" : 350,
+                "Spirit": 250,
+                "team":  {
+                         "Grougal","Nefarian","cephir"
+                        },
+                "Characters": [
+                                {
+                                "name":"Grougal",
+                                "Hp":800,
+                                "Atk":200,
+                                "Def":500,
+                                "Special Atk":100,
+                                "Special Def":400,
+                                "Element": "fire"
+                                
+                                },
+                                {
+                                "name":"Nefarian",
+                                "Hp":500,
+                                "Atk":500,
+                                "Def":300,
+                                "Special Atk":400,
+                                "Special Def":500,
+                                "Element": "water"
+                                
+                                },
+                                {
+                                "name":"Uroboros",
+                                "Hp":400,
+                                "Atk":400,
+                                "Def":250,
+                                "Special Atk":700,
+                                "Special Def":100,
+                                "Element": "darkness"
+                                
+                                },
+                                {
+                                "name":"Angelo",
+                                "Hp":500,
+                                "Atk":400,
+                                "Def":450,
+                                "Special Atk":400,
+                                "Special Def":450,
+                                "Element": "Light"
+                                
+                                }
+                
+                              ]              
+            }
+        ]
